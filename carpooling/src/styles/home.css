@@ -1,0 +1,51 @@
+.home-search {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    max-width: 1000px;
+  }
+  
+  .home-search input {
+    padding: 10px;
+    width: 30%;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .home-search button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .famous-rides {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .famous-rides h2 {
+    font-size: 24px;
+  }
+  
+  .ride-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .about-us, .customer-reviews {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .review-card {
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+  

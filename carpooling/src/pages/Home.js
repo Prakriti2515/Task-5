@@ -10,54 +10,39 @@ const Home = () => {
 
   return (
     <div>
-      <section style={{ textAlign: "center", backgroundColor: "#f4f4f4", padding: "40px 20px" }}>
+      <section className="home-search">
         <h1>Find Your Ride</h1>
-        <input type="text" placeholder="From" style={{ padding: "10px", margin: "10px", borderRadius: "4px" }} />
-        <input type="text" placeholder="To" style={{ padding: "10px", margin: "10px", borderRadius: "4px" }} />
-        <button style={{ backgroundColor: "#4CAF50", color: "#fff", border: "none", padding: "10px 20px", borderRadius: "4px" }}>
-          Search
-        </button>
+        <input type="text" placeholder="From" />
+        <input type="text" placeholder="To" />
+        <button>Search</button>
       </section>
 
-      {/* "Some Famous Rides" Heading with Style */}
-      <section style={{ textAlign: "center", margin: "40px 0" }}>
-        <h2 style={{
-          fontSize: "36px", 
-          color: "#fff", 
-          background: "light-green", 
-          padding: "10px 20px", 
-          borderRadius: "5px", 
-          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"
-        }}>
-          SOME FAMOUS RIDE
-        </h2>
-        <hr style={{ width: '80%', margin: '20px auto', border: '1px solid #ddd' }} />
+      <section className="famous-rides">
+        <h2>SOME FAMOUS RIDES</h2>
+        <hr />
       </section>
 
-      {/* Ride Cards Section */}
-      <section style={{ display: "flex", justifyContent: "center", gap: "20px", padding: "20px" }}>
+      <section className="ride-cards">
         {rides.map((ride, index) => (
           <RideCard key={index} {...ride} />
         ))}
       </section>
 
-      {/* About Section */}
-      <section style={{ backgroundColor: "#fff", padding: "40px 20px", textAlign: "center" }}>
+      <section className="about-us">
         <h2>About Us</h2>
         <p>We connect carpoolers with similar destinations to save costs, reduce pollution, and make travel easier.</p>
       </section>
 
-      {/* Customer Reviews */}
-      <section style={{ backgroundColor: "#f4f4f4", padding: "40px 20px", textAlign: "center" }}>
+      <section className="customer-reviews">
         <h2>What Our Users Say</h2>
-        <div style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
-          <div style={{ width: "300px", border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
+        <div>
+          <div className="review-card">
             <h3>Aman Sir</h3>
-            <p>"I found a perfect carpool for my trip to  boys hostel. It was safe, affordable, and comfortable!"</p>
+            <p>"I found a perfect carpool for my trip to the boys hostel. It was safe, affordable, and comfortable!"</p>
           </div>
-          <div style={{ width: "300px", border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}>
+          <div className="review-card">
             <h3>Mithanshu Sir</h3>
-            <p>"Carpooling saved me a lot of money  i booked it daily when i went back to my room behind the ryan international school. Highly recommend!"</p>
+            <p>"Carpooling saved me a lot of money. I booked it daily when I went back to my room behind Ryan International School. Highly recommend!"</p>
           </div>
         </div>
       </section>
