@@ -10,11 +10,14 @@ import './styles/home.css';
 import './styles/login.css';
 import './styles/signup.css';
 
-// Import components
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import RideCard from "./components/RideCard";
+// import apiClient from "./api/apiClient";
+// import auth from "./api/auth";
 
-// Import pages
+
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
