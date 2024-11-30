@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -9,19 +10,19 @@ import './styles/ridecard.css';
 import './styles/home.css';
 import './styles/login.css';
 import './styles/signup.css';
+import './styles/forgot-password.css';
+import './styles/reset-password.css';
 
-
+// Import components and pages
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import RideCard from "./components/RideCard";
-// import apiClient from "./api/apiClient";
-// import auth from "./api/auth";
-
-
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
   return (
@@ -32,6 +33,8 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
       <Footer />
     </Router>

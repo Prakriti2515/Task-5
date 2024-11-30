@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const API_KEY = "";
-const BASE_URL = "https://task-4-2.onrender.com"; 
+const API_KEY = "rnd_hSVPkfRmPt3zt7IwvhBsosr2noRN";
+const BASE_URL = "https://task-4-2.onrender.com";
 
 const apiClient = axios.create({
   baseURL: BASE_URL,

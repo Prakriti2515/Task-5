@@ -1,9 +1,9 @@
-import apiClient from "./apiClient";
 
+import apiClient from "./apiClient";
 
 export const loginUser = async (email, password) => {
   try {
-    const response = await apiClient.post("https://task-4-2.onrender.com/schema/login", { email, password });
+    const response = await apiClient.post("/schema/login", { email, password });
     return response.data;
   } catch (error) {
     console.error("Login failed:", error.response?.data || error.message);
@@ -13,11 +13,32 @@ export const loginUser = async (email, password) => {
 
 export const signupUser = async (email, password, name) => {
   try {
-    const response = await apiClient.post("https://task-4-2.onrender.com/schema/signup", { email, password, name });
+    const response = await apiClient.post("/schema/signup", { email, password, name });
     return response.data;
   } catch (error) {
     console.error("Signup failed:", error.response?.data || error.message);
     throw error;
   }
 };
-export default auth;
+
+
+
+export const resetPassword = async (otp, newPassword) => {
+  try {
+    const response = await apiClient.post("/schema/reset-password", { otp, newPassword });
+    return response.data;
+  } catch (error) {
+    console.error("Resetting password failed:", error.response?.data || error.message);
+    throw error;
+  }
+
+};
+export const sendResetOtp = async (email) => {
+  try {
+    const response = await apiClient.post("/schema/forgot-password", { email });
+    return response.data;  
+  } catch (error) {
+    console.error("Sending OTP failed:", error.response?.data || error.message);
+    throw error;  
+  }
+};
