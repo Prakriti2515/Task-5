@@ -10,9 +10,9 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page reload
-    setError(""); // Clear previous error messages
-    setIsLoading(true); // Indicate loading state
+    e.preventDefault(); 
+    setError(""); 
+    setIsLoading(true);
 
     // Check for empty fields
     if (!email || !password) {
@@ -23,14 +23,14 @@ const Login = () => {
 
     try {
       const data = await loginUser(email, password); // Call API function
-      localStorage.setItem("token", data.token); // Save token in localStorage
+      localStorage.setItem("token", data.token); 
       console.log("Login successful:", data);
       navigate("/"); // Redirect to home or dashboard
     } catch (err) {
       setError(err.response?.data?.message || "Login failed! Please try again."); // Handle API errors
-      console.error("Error during login:", err); // Log error for debugging
+      console.error("Error during login:", err); 
     } finally {
-      setIsLoading(false); // Stop loading after the process completes
+      setIsLoading(false); 
     }
   };
 
