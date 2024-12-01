@@ -1,6 +1,5 @@
-
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 
 // Import all CSS files
 import './styles/global.css';
@@ -25,8 +24,13 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 
 const App = () => {
+  const location = useLocation();
+
+  // Define the routes where the footer should not be displayed
+  const noFooterRoutes = ["/login", "/signup", "/forgot-password"];
+
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -36,9 +40,16 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
-      <Footer />
-    </Router>
+      {/* Conditionally render Footer */}
+      {!noFooterRoutes.includes(location.pathname) && <Footer />}
+    </>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
